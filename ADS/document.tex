@@ -1,0 +1,121 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{hyperref}
+\usepackage{float}
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage{geometry}
+\usepackage{indentfirst}
+\usepackage{algorithm}
+\usepackage{algpseudocode}
+\geometry{left=3cm,right=3cm,top=2.5cm,bottom=2.5cm}
+
+%目的是让伪代码可以分页
+\usepackage{lipsum}
+
+\makeatletter
+\newenvironment{breakablealgorithm}
+{% \begin{breakablealgorithm}
+		\begin{center}
+			\refstepcounter{algorithm}% New algorithm
+			\hrule height.8pt depth0pt \kern2pt% \@fs@pre for \@fs@ruled
+			\renewcommand{\caption}[2][\relax]{% Make a new \caption
+				{\raggedright\textbf{\ALG@name~\thealgorithm} ##2\par}%
+				\ifx\relax##1\relax % #1 is \relax
+				\addcontentsline{loa}{algorithm}{\protect\numberline{\thealgorithm}##2}%
+				\else % #1 is not \relax
+				\addcontentsline{loa}{algorithm}{\protect\numberline{\thealgorithm}##1}%
+				\fi
+				\kern2pt\hrule\kern2pt
+			}
+		}{% \end{breakablealgorithm}
+		\kern2pt\hrule\relax% \@fs@post for \@fs@ruled
+	\end{center}
+}
+\makeatother
+
+\hypersetup{
+	colorlinks=true,
+	linkcolor=black
+}
+
+%设置图片路径
+\graphicspath{{img/}}
+
+% 设置代码样式
+\lstset{
+	language=C,
+	basicstyle=\ttfamily\footnotesize,
+	keywordstyle=\color{blue},
+	commentstyle=\color{gray},
+	stringstyle=\color{red},
+	showstringspaces=false,
+	numbers=left,
+	numberstyle=\tiny\color{gray},
+	stepnumber=1,
+	numbersep=8pt,
+	backgroundcolor=\color{white},
+	tabsize=2,
+	breaklines=true,
+	breakatwhitespace=false
+}
+
+% 定义一个新的命令来创建标题页
+\newcommand{\makecustomtitle}{
+	\begin{titlepage}
+		\centering
+		\includegraphics[width=0.5\textwidth]{./image.png}\\[2cm]
+		{\fontsize{36}{10}\bfseries Advanced Data Structures and Algorithm Analysis}\\[2cm]
+		{\Huge\bfseries\linespread{1.5} Project x: xxx}\\[2cm]
+		{\large\bfseries\linespread{1.5}\selectfont Date: \today}\\[2cm]
+	\end{titlepage}
+}
+
+\begin{document}
+	
+	\makecustomtitle
+	
+	\tableofcontents
+	\newpage
+	
+	\section{Introduction}
+	
+	\newpage
+	\section{Algorithm Specification}
+	
+	\begin{algorithm}[H]
+		\caption{Example}
+		\begin{algorithmic}[1]
+			\Function{Start}{}\\
+			Print Hello world!
+			\EndFunction
+		\end{algorithmic}
+	\end{algorithm}
+	
+	
+	\newpage
+	\section{Testing Results}
+	% 测试案例表。每个测试案例通常包括本案例目的的简要描述、预期结果、程序的实际行为、如果程序未按预期工作则可能的错误原因，以及当前状态（“通过”，或“已修正”，或“待定”）。
+	
+	\newpage
+	\section{Analysis and Comments}
+	
+	\newpage
+	\appendix
+	\section*{Appendix: Source Code}
+	% \lstinputlisting{xxx.c}
+	
+	\section*{References}
+	% 按照以下格式列出所有参考文献：
+	% [1] Author, “Title of the article”, Name of the journal, page no., (year)
+	% [2] Author, “Title of the book”, Name of the publisher, year
+	% [3] Author, “Title of the article”, Web site links
+	
+	\section*{Author List}
+	
+	\section*{Declaration}
+	% 声明该项目的所有工作都是作为团队独立完成的。
+	We hereby declare that all the work done in this project titled "xxx" is of our independent effort as a group.
+	
+\end{document}

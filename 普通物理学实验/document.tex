@@ -1,0 +1,134 @@
+\documentclass{ctexart}
+\usepackage{geometry}
+\usepackage{enumitem}
+\usepackage{graphicx}
+\usepackage{listings} % 引入宏包
+\usepackage{xcolor}   % 引入颜色宏包，用于代码块着色
+\usepackage{titlesec}  % 用于自定义标题格式
+\usepackage{float}
+\usepackage{fancyhdr}%页眉页脚
+\usepackage{amsmath}
+\usepackage{siunitx}
+
+\geometry{a4paper, left=3cm, right=3cm, top=3cm, bottom=3cm}
+% 自定义一级标题的格式，左对齐，中文数字编号
+\titleformat{\section}
+{\normalfont\Large\bfseries}  % 标题的字体、大小和粗体
+{\chinese{section}、}         % 自动生成中文编号（如一、二、三）
+{0em}                        % 编号与标题文字之间的间距
+{}                           % 标题前缀
+
+% 让 figure 的编号跟随章节编号
+\numberwithin{figure}{section}
+\numberwithin{table}{section}
+\pagestyle{fancy}	
+
+\begin{document}
+	
+	\lstset{                    % 设置代码显示风格
+		language=Verilog,        % 代码语言
+		basicstyle=\ttfamily,   % 基本字体设置
+		keywordstyle=\color{blue},  % 关键字颜色
+		commentstyle=\color{green}, % 注释颜色
+		stringstyle=\color{red},    % 字符串颜色
+		showstringspaces=false, % 不显示空格符
+		numbers=left,                          	% 在左侧显示行号
+		frame=single,                         	% 设置代码块边框
+	}
+	
+	
+	\thispagestyle{empty}
+	\begin{center}
+		\includegraphics[width=0.6\textwidth]{logo.png}
+	\end{center}
+	\vspace{1.8cm}
+	
+	\graphicspath{{figures/}}
+	\begin{center}
+		\zihao{-3}
+		\begin{tabular}{rl}
+			\textbf{课题题目} & : \underline{\makebox[8cm]{xxxxxxx}} \\
+			& \; \underline{\makebox[8cm]{（xxxxxxx）}} \\
+			\vspace{0.1cm} & \\
+			\textbf{姓名学号} & : \underline{\makebox[8cm]{xx\quad xxx}} \\
+			\vspace{0.1cm} & \\
+			&\;  \underline{\makebox[8cm]{xx\quad xxx}}\\
+			\vspace{0.1cm} & \\
+			&\;  \underline{\makebox[8cm]{xx\quad xxx}} \\
+			\vspace{0.1cm} & \\
+			&\;  \underline{\makebox[8cm]{xx \quad xxx}} \\
+			\vspace{0.1cm} & \\
+			\textbf{指导老师} & : \underline{\makebox[8cm]{xxx}} \\
+		\end{tabular}
+	\end{center}
+	
+	\vspace{0.6cm}
+	
+	\begin{center}
+		\zihao{-3}
+		\textbf{物理实验教学中心}
+	\end{center}
+	\begin{center}
+		\zihao{-3}
+		\textbf{2024 年 12 月 25 日}
+	\end{center}
+	
+	\tableofcontents
+	\newpage
+	\pagenumbering{arabic}
+	
+	\section{背景知识}
+	
+	\newpage
+	\section{原理阐述}
+	
+	
+	\newpage
+	\section{实验装置}
+	
+	\subsection{硬件装置}
+	
+	\subsection{软件装置}
+	
+	
+	\newpage
+	\section{实验操作与结果}
+	
+	\subsection{实验方法}
+	
+	\subsection{实验数据与结果}
+	
+	\newpage
+	\section{分析与讨论}
+	
+	\subsection{误差分析}
+	
+	\subsection{实验分析}
+	
+	\newpage
+	\section{实验总结}
+	
+	\subsection{实验总述}
+	
+	\subsection{不足之处}
+	
+	\subsection{未来展望}
+	
+	\newpage
+	\section{课题总结}
+	
+	\subsection{仪器系统照片}
+	
+	\subsection{实验过程记录}
+	
+	\subsection{个人小结与感想}
+	
+	\newpage
+	\section{参考文献}
+	
+	% 按照以下格式列出所有参考文献：
+	% [1] Author, “Title of the article”, Name of the journal, page no., (year)
+	% [2] Author, “Title of the book”, Name of the publisher, year
+	% [3] Author, “Title of the article”, Web site links
+	
+\end{document}
